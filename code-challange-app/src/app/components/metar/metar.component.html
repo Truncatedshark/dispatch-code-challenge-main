@@ -1,0 +1,58 @@
+<body class="background">
+  
+
+  <div class="main">
+    <h1 class="header">Airport Weather App</h1>
+    <div class="nav">
+      <ul class="nav ul">
+        <li class="nav li"><a routerLink="/weather" class="nav a" routerLinkActive="active" ariaCurrentWhenActive="page">HOME</a></li>
+        <li class="nav li"><a routerLink="/metar" class="nav a" routerLinkActive="active" ariaCurrentWhenActive="page">METAR</a></li>
+        <li class="nav li"><a routerLink="/taf" class="nav a" routerLinkActive="active" ariaCurrentWhenActive="page">TAF</a></li>
+        <li class="nav li"><a routerLink="/full" class="nav a" routerLinkActive="active" ariaCurrentWhenActive="page">FULL</a></li>
+      </ul>
+    </div>
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+  
+    <div *ngIf="!loading">
+      <div class="inputForm">
+          <form class="input" [formGroup]="loginForm"  (ngSubmit)="getWeatherData()">
+            <input type="text" placeholder="Enter ICAO Code"  formControlName="ICAO" class="form-control" />
+          </form>
+          <button type="submit" class="button" (click)="getWeatherData()"> Get the Current Metar </button>
+        </div>
+            
+            <ul *ngIf="weatherData" class="output">
+              <li>
+                Current Metar Data: <br><br>
+             </li>
+              <li>
+                Date:  {{weatherData.timestamp | date: 'mediumDate'}}
+            </li>
+              <li>
+                  Time:  {{weatherData.timestamp | date: 'mediumTime'}}
+              </li>
+              <li>
+                   Wind: {{weatherData.wind.from}}° at {{weatherData.wind.speedKts}}kts
+              </li>
+              <li>
+                   Dewpoint: {{weatherData.dewpoint}}°
+              </li>
+              <li>
+                   Humidity: {{weatherData.humidity}}%
+              </li>
+              <li>
+                   Density Altitude: {{weatherData.densityAltitude}}'
+              </li>
+            </ul>
+            
+          </div>
+          <div *ngIf="weatherHistory" class="outputFrame">
+            <h1 class="header">Airport Weather History:</h1>
+            <div class="outputFrame" *ngFor= "let _weatherData of weatherHistory">
+              <button class="button"  (click)="changeWeatherData(_weatherData)">{{_weatherData.ICAO}}</button>
+            </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  
+  </body>

@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main {
+    background-color: rgba(64, 160, 224, 0.8);
+    margin: auto;
+    margin-top: 25px;
+    width: 50%;
+    padding: 10px;
+    border: 3px solid rgb(30, 2, 151);
+  }
+  .inputForm{
+    width: 17%;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .outputFrame{
+    width: 30%;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .output{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077c2;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .button{
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #0077c2;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+
+  .historyView{
+    margin: auto;
+    
+    padding: 10px;
+  }
+
+  .spinner{
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+
+  .background{
+    margin: 0;
+    height: 100%;
+    background-image: url("background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+
+
+  
+  ul{
+    list-style-type: none; /* Remove bullets */
+    display:table;
+  }
+
+  
